@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFC ERGO</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    background-image: url('https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3772.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1719273600&semt=ais_user');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+        /* Custom styles for the cards */
+        .icon-item {
+            margin-bottom: 30px;
+        }
+
+        .icon-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .icon-card:hover {
+            transform: scale(1.05);
+        }
+
+        .icon-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .icon-card p {
+            text-align: center;
+            margin: 15px 0 5px 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .dropdown-form {
+            display: none;
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .dropdown-form form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .dropdown-form select {
+            margin-bottom: 15px;
+        }
+
+        .dropdown-form button {
+            width: 100%;
+        }
+
+        .footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+
+<style>
+    /* Custom styles for the cards */
+    .icon-item {
+        margin-bottom: 30px;
+    }
+
+    .icon-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .icon-card:hover {
+        transform: scale(1.05);
+    }
+
+    .icon-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .icon-card p {
+        text-align: center;
+        margin: 15px 0 5px 0;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .dropdown-form {
+        display: none;
+        margin-top: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+
+    .dropdown-form form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .dropdown-form select {
+        margin-bottom: 15px;
+    }
+
+    .dropdown-form button {
+        width: 100%;
+    }
+
+    .footer {
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+
+    /* Card animation styles */
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+    }
+
+    .card {
+    width: 100%; /* Match the width of icon-card */
+    height: 300px; /* Adjust height as per your design */
+    background-color: #fff;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+
+    .card-inner {
+        text-align: center;
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.4;
+    }
+</style>
+</head>
+<body>
+
+<header class="bg-secondary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">HDFC ERGO</h1>
+    </div>
+</header>
+
+<section class="container mt-5 icon-container">
+    <div class="row justify-content-center">
+
+        <!-- Car Insurance Section -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center icon-item">
+            <div class="icon-card" onclick="toggleForm('car-form')">
+                <img src="https://stat.overdrive.in/wp-content/odgallery/2022/07/63248_2022_Suzuki_Brezza_1.jpg" alt="Car Insurance">
+                <p>Car Insurance</p>
+            </div>
+            <div class="dropdown-form" id="car-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Select Coverage Type</option>
+                            <option value="comprehensive">Comprehensive</option>
+                            <option value="third-party">Third Party</option>
+                            <option value="not-sure">Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-terms-car" required>
+                        <label class="form-check-label" for="agree-terms-car">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get Quote</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bike Insurance Section -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center icon-item">
+            <div class="icon-card" onclick="toggleForm('bike-form')">
+                <img src="https://stat.overdrive.in/wp-content/odgallery/2022/08/63809_2022_Royal_Enfield_Hunter_350_468x263.jpg" alt="Bike Insurance">
+                <p>Bike Insurance</p>
+            </div>
+            <div class="dropdown-form" id="bike-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Bike Number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get Quote</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Health Insurance Section -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center icon-item">
+            <div class="icon-card" onclick="toggleForm('health-form')">
+                <img src="https://thumbs.dreamstime.com/b/health-insurance-29195078.jpg" alt="Health Insurance">
+                <p>Health Insurance</p>
+            </div>
+            <div class="dropdown-form" id="health-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type"text" class="form-control" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Select Sum Insured</option>
+                            <option value="up-to-5">Up to 5 Lakhs</option>
+                            <option value="5-to-15">5 - 15 Lakhs</option>
+                            <option value="above-15">Above 15 Lakhs</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-terms-health" required>
+                        <label class="form-check-label" for="agree-terms-health">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get Quote</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Travel Insurance Section -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center icon-item">
+            <div class="icon-card" onclick="toggleForm('travel-form')">
+                <img src="https://www.askapilot.net/wp-content/uploads/2021/07/typerating.png" alt="Travel Insurance">
+                <p>Travel Insurance</p>
+            </div>
+            <div class="dropdown-form" id="travel-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Destination" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Travel Date" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Passport Number" required>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-terms-travel" required>
+                        <label class="form-check-label" for="agree-terms-travel">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buy Now</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Home Insurance Section -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center icon-item">
+            <div class="icon-card" onclick="toggleForm('home-form')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQdEIf1onmcWhWJ2cq12gwV1ZBvUGHjEP5lQ&s" alt="Home Insurance">
+                <p>Home Insurance</p>
+            </div>
+            <div class="dropdown-form" id="home-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City" required>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-terms-home" required>
+                        <label class="form-check-label" for="agree-terms-home">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get Quote</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function toggleForm(formId) {
+        // Get the form to toggle
+        const formToToggle = document.getElementById(formId);
+        const isCurrentlyVisible = formToToggle.style.display === "block";
+
+        // Hide all forms
+        const forms = document.querySelectorAll('.dropdown-form');
+        forms.forEach(form => form.style.display = 'none');
+
+        // Toggle the clicked form if it was not already visible
+        if (!isCurrentlyVisible) {
+            formToToggle.style.display = "block";
+        }
+    }
+</script>
+
+
+
+<section class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4"></h2>
+            <div class="card-container" id="cardContainer">
+                <!-- Cards will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript for rotating cards
+    var cardIndex = 0;
+    var cardsData = [
+        {
+            image: "https://www.hdfcergo.com/assets/images/default-source/new-aio-page-icons/group-1376.webp",
+            info: "1.5 CRORE+ HAPPY CUSTOMERS"
+        },
+        {
+            image: "https://www.hdfcergo.com/assets/images/default-source/new-aio-page-icons/group-1377.webp",
+            info: "24X7 CUSTOMER SUPPORT"
+        },
+        {
+            image: "https://www.hdfcergo.com/assets/images/default-source/new-aio-page-icons/group-1379.webp",
+            info: "GET INSTANT POLICY ONLINE"
+        },
+        {
+            image: "https://www.hdfcergo.com/assets/images/default-source/new-aio-page-icons/group-1380.webp",
+            info: "EASY CLAIM SETTLEMENT PROCESS"
+        }
+    ];
+
+    function rotateCards() {
+        var cardContainer = document.getElementById('cardContainer');
+        cardContainer.innerHTML = ''; // Clear previous cards
+
+        // Create new card
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.style.transform = 'rotateY(0deg)';
+        card.innerHTML = `
+            <div class="card-inner">
+                <h3>WHY CHOOSE HDFC ERGO?</h3>
+                <img src="${cardsData[cardIndex % cardsData.length].image}" alt="HDFC ERGO Image">
+                <p>${cardsData[cardIndex % cardsData.length].info}</p>
+            </div>
+        `;
+        cardContainer.appendChild(card);
+
+        // Increment index for next card
+        cardIndex++;
+        setTimeout(rotateCards, 2000); // Rotate every 3 seconds
+    }
+
+    // Initial call to start rotating cards
+    rotateCards();
+</script>
+
+
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Insurance Options. All rights reserved.</p>
+</footer>
+
+
+
+</body>
+</html>
